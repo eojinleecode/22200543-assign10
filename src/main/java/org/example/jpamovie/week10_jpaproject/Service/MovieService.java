@@ -1,9 +1,9 @@
 package org.example.jpamovie.week010_jpaproject.Service;
 
-import org.example.jpamovie.week09_jpaproject.Dto.MovieRequest;
-import org.example.jpamovie.week09_jpaproject.Dto.MovieResponse;
-import org.example.jpamovie.week09_jpaproject.Entity.Movie;
-import org.example.jpamovie.week09_jpaproject.Repository.MovieRepository;
+import org.example.jpamovie.week10_jpaproject.Dto.MovieRequest;
+import org.example.jpamovie.week10_jpaproject.Dto.MovieResponse;
+import org.example.jpamovie.week10_jpaproject.Entity.Movie;
+import org.example.jpamovie.week10_jpaproject.Repository.MovieRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -70,3 +70,13 @@ public class MovieService {
                         HttpStatus.NOT_FOUND, "Movie not found: " + id));
     }
 }
+
+public List<MovieResponse> findByGenre(String genre) {
+
+    List<Movie> movies=repository.findByGenre(genre);
+    List<MovieResponse>result=new ArrayList<>();
+    for (Movie movie:movies){
+        result.add(MovieResponse.from(movie));
+        }
+                    return result;
+            }
