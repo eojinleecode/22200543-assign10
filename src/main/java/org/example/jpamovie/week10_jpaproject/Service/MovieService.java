@@ -37,7 +37,14 @@ public class MovieService {
     public MovieResponse findById(Long id) {
         return MovieResponse.from(findEntity(id));
     }
+    /*③  Q7. save()를 호출하면 새로운 데이터 등록과 기존 데이터 수정이 어떻게 처리되는가?
+          새로운 객체 Entity라면 내부적으로 persist()를 호출하여 정보를 저장하고,
+          기존에 있는 Entity라면 내부적으로 merge()를 통해 데이터를 수정한다
 
+          Q8.
+
+
+    * */
     public MovieResponse update(Long id, MovieRequest request) {
         Movie movie=findEntity(id);
          movie.setTitle(request.title());
