@@ -1,7 +1,7 @@
-package org.example.jpamovie.week09_jpaproject.Controller;
- import org.example.jpamovie.week09_jpaproject.Dto.MovieRequest;
- import org.example.jpamovie.week09_jpaproject.Dto.MovieResponse;
- import org.example.jpamovie.week09_jpaproject.Service.MovieService;
+package org.example.jpamovie.week10_jpaproject.Controller;
+ import org.example.jpamovie.week10_jpaproject.Dto.MovieRequest;
+ import org.example.jpamovie.week10_jpaproject.Dto.MovieResponse;
+ import org.example.jpamovie.week10_jpaproject.Service.MovieService;
  import jakarta.validation.Valid;
  import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;

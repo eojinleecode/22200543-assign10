@@ -1,4 +1,4 @@
-package org.example.jpamovie.week09_jpaproject.Service;
+package org.example.jpamovie.week010_jpaproject.Service;
 
 import org.example.jpamovie.week09_jpaproject.Dto.MovieRequest;
 import org.example.jpamovie.week09_jpaproject.Dto.MovieResponse;
