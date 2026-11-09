@@ -1,5 +1,5 @@
 package org.example.jpamovie.week10_jpaproject.Repository;
-
+import java.util.List;
 import org.example.jpamovie.week10_jpaproject.Entity.Movie;
 import org.springframework.data.jpa.repository.JpaRepository;
 /*  ② Q3.  JpaRepository<Entity, Long>에서 두 타입은 각각 무엇을 의미하는가?
@@ -28,7 +28,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface MovieRepository extends JpaRepository<Movie, Long> {
     List<Movie> findByGenre(String genre);
+      List<Movie> findByGenreAndRatingGreaterThanEqual(
+            String genre, Double rating);
 
 
 
+    List<Movie> findByGenreOrderByRatingDesc(String genre);
+
+    List<Movie> findByTitleContainingIgnoreCase(String keyword);
 }

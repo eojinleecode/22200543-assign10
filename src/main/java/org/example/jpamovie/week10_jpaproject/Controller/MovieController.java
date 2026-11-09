@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import java.net.URI;
 import java.util.List;
 
+ import org.springframework.web.bind.annotation.RequestParam;
 @RestController
 @RequestMapping("/api/movies")
 public class MovieController {
@@ -42,5 +43,39 @@ public class MovieController {
     public ResponseEntity<Void> delete(@PathVariable Long id) {
                      service.delete(id);
         return ResponseEntity.noContent().build();
+    }
+
+
+
+
+    @GetMapping("/search/genre")
+    public ResponseEntity<List<MovieResponse>> searchByGenre(
+            @RequestParam String genre) {
+
+        return ResponseEntity.ok(service.findByGenre(genre));
+    }
+
+
+    @GetMapping("/search/genre-rating")
+    public ResponseEntity<List<MovieResponse>> searchByGenreAndRating(
+            @RequestParam String genre,
+            @RequestParam Double rating) {
+
+        return ResponseEntity.ok(
+                service.findByGenreAndRating(genre, rating));
+    }
+
+    @GetMapping("/search/genre-sorted")
+    public ResponseEntity<List<MovieResponse>> searchByGenreSorted(
+            @RequestParam String genre) {
+
+        return ResponseEntity.ok(service.findByGenreSorted(genre));
+    }
+
+    @GetMapping("/search/title")
+    public ResponseEntity<List<MovieResponse>> searchByTitle(
+            @RequestParam String keyword) {
+
+        return ResponseEntity.ok(service.findByTitleKeyword(keyword));
     }
 }
