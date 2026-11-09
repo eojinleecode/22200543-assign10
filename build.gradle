@@ -6,7 +6,7 @@ plugins {
 
 group = 'org.example.jpabook'
 version = '0.0.1-SNAPSHOT'
-description = 'week09_jpaproject'
+description = 'week10_jpaproject'
 
 java {
     toolchain {
