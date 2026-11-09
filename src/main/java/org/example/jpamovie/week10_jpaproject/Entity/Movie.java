@@ -1,9 +1,15 @@
 package org.example.jpamovie.week10_jpaproject.Entity;
 
 import jakarta.persistence.*;
+import java.time.LocalDateTime;
 
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @Entity // ① Q1.Entity는 Java 코드와 DB 테이블을 매핑시키는 역할을 한다.
 @Table(name = "movies") //① Q1.Table은 특정 DB 테이블 이름과 연결할 수 있는 역할을 한다.
+
+@EntityListeners(AuditingEntityListener.class)
 public class Movie {
 
     @Id
@@ -33,6 +39,14 @@ public class Movie {
 
     @Column
     private Integer runningTime;
+
+    @CreatedDate
+    @Column(name ="created_at", updatable=false)
+    private LocalDateTime createdAt;
+
+    @LastModifiedDate
+    @Column(name ="updated_at")
+    private LocalDateTime updatedAt;
 
     public Long getId() {
         return id;

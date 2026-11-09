@@ -45,7 +45,13 @@ public class MovieService {
           새로운 객체 Entity라면 내부적으로 persist()를 호출하여 정보를 저장하고,
           기존에 있는 Entity라면 내부적으로 merge()를 통해 데이터를 수정한다
 
-          Q8.
+
+            Q8. @Transactional과 Dirty Checking은 어떤 관계가 있는가?
+
+            @Transactional은 DB관련된 작업을 하나의 트랜젝션으로 관리한다.
+              Dirty Checking은  Entity안에 값들의 변동사항이나 수정을 감지하는 역할을 한다.
+              이에 따라 트랜젝션 안에서 DB Entity 값을 변경 수정하면 save() 메서드를 안 써도 DB에 데이터값이 자동으로 반영된다.
+
 
 
     * */

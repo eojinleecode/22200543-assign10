@@ -1,10 +1,10 @@
-package org.example.jpamovie.week09_jpaproject;
+package org.example.jpamovie.week10_jpaproject;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Week09JpaprojectApplicationTests {
+class Week10JpaprojectApplicationTests {
 
     @Test
     void contextLoads() {
